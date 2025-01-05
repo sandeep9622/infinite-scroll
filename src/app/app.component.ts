@@ -5,10 +5,11 @@ import { CommonModule } from '@angular/common';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
 import { ImageService } from './services/image.service';
 import { LoaderComponent } from './shared/loader/loader.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ImageListComponent,CommonModule,SearchBarComponent,LoaderComponent],
+  imports: [ImageListComponent,CommonModule,SearchBarComponent,LoaderComponent,FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })

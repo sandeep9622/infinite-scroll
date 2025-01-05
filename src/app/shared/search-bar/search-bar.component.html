@@ -1,6 +1,6 @@
-<div class="flex items-center justify-between bg-gray-800 p-4 shadow-md rounded-lg">
+<div class="flex items-center justify-between bg-gray-800 p-4 shadow-md rounded-lg  flex-grow">
   <!-- Brand -->
-  <div class="flex items-center space-x-2">
+  <div class="flex items-center space-x-2 hidden sm:flex">
     <!-- SVG Emoji Logo -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8">
       <circle cx="12" cy="12" r="10" fill="#6B7280" /> <!-- Robot Head (Gray) -->
@@ -16,7 +16,7 @@
   <!-- Search Field -->
   <div class="flex flex-1 mx-4">
     <input type="text" [(ngModel)]="searchQuery" (keyup.enter)="onSearch()" placeholder="Search images..."
-      class="flex-grow px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded-l-lg focus:outline-none focus:ring focus:ring-yellow-500" />
+      class="flex-grow px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded-l-lg focus:outline-none focus:ring focus:ring-yellow-500 md:w-full" />
     <button (click)="onSearch()"
       class="bg-yellow-500 text-gray-900 px-4 py-2 rounded-r-lg flex items-center justify-center hover:bg-yellow-600">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -28,7 +28,7 @@
   </div>
 
   <!-- Credit Section -->
-  <div class="flex items-center space-x-2">
+  <div class="flex items-center space-x-2 hidden sm:flex">
     <!-- Text Link -->
     <a href="https://www.pexels.com" class="text-sm text-gray-400 hover:underline">Photos by Pexels</a>
 
