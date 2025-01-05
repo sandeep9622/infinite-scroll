@@ -1,0 +1,40 @@
+<div class="flex items-center justify-between bg-gray-800 p-4 shadow-md rounded-lg">
+  <!-- Brand -->
+  <div class="flex items-center space-x-2">
+    <!-- SVG Emoji Logo -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8">
+      <circle cx="12" cy="12" r="10" fill="#6B7280" /> <!-- Robot Head (Gray) -->
+      <rect x="8" y="14" width="8" height="2" rx="1" fill="#D1D5DB" /> <!-- Robot Mouth -->
+      <circle cx="9" cy="10" r="1.5" fill="#F43F5E" /> <!-- Left Eye -->
+      <circle cx="15" cy="10" r="1.5" fill="#3B82F6" /> <!-- Right Eye -->
+      <rect x="11" y="5" width="2" height="3" fill="#D1D5DB" /> <!-- Antenna Stem -->
+      <circle cx="12" cy="4" r="1" fill="#F59E0B" /> <!-- Antenna Tip -->
+    </svg>
+    <span class="text-xl font-bold text-yellow-400">Image Search</span>
+  </div>
+
+  <!-- Search Field -->
+  <div class="flex flex-1 mx-4">
+    <input type="text" [(ngModel)]="searchQuery" (keyup.enter)="onSearch()" placeholder="Search images..."
+      class="flex-grow px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded-l-lg focus:outline-none focus:ring focus:ring-yellow-500" />
+    <button (click)="onSearch()"
+      class="bg-yellow-500 text-gray-900 px-4 py-2 rounded-r-lg flex items-center justify-center hover:bg-yellow-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd"
+          d="M12.9 14.32a8 8 0 111.414-1.414l4.39 4.39a1 1 0 01-1.414 1.414l-4.39-4.39zM8 14a6 6 0 100-12 6 6 0 000 12z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Credit Section -->
+  <div class="flex items-center space-x-2">
+    <!-- Text Link -->
+    <a href="https://www.pexels.com" class="text-sm text-gray-400 hover:underline">Photos by Pexels</a>
+
+    <!-- White Logo -->
+    <a href="https://www.pexels.com">
+      <img src="https://images.pexels.com/lib/api/pexels-white.png" class="h-8" alt="Pexels Logo" />
+    </a>
+  </div>
+</div>
