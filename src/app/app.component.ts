@@ -15,7 +15,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 })
 export class AppComponent {
   title = 'infinite-scroll';
-  searchQuery:string="";
+  searchQuery:string="wallpaper";
   items: any[] = [];
 
   page = 1;// represents the current page number for pagination.
@@ -23,6 +23,10 @@ export class AppComponent {
     isLoading:boolean=false; // is a boolean flag to track whether new items are being loaded.
 
 constructor(private imageService: ImageService){}
+
+ngOnInit(){
+  this.loadItems()
+}
 
 @HostListener('window:scroll',['$event'])
 onWindowScroll(event:any){
