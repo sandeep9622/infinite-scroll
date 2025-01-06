@@ -1,6 +1,6 @@
 <div class="item-list grid gap-2 grid-cols-1 lg:grid-cols-3 mx-auto my-2 w-full">
     <div *ngFor="let item of items;let i=index" class="img-container relative w-full mx-auto rounded-md border overflow-hidden">
-        <img class="img h-full w-full rounded-md object-cover" [src]="item.src.landscape" [alt]="item.alt" crossorigin>
+        <img class="img h-full w-full rounded-md object-cover" [src]="isLandscape ? item.src.landscape : item.src.portrait" [alt]="item.alt" crossorigin>
 
         <div class="absolute flex flex-row top-2 right-2 img-container">
             <button class="flex-item" (click)="toggleInfo(i)">
@@ -10,7 +10,7 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75Z" fill="#ffffff"/>
                     </svg>
             </button>
-            <a (click)="downloadImage(item.src.original)" class="flex-item download-icon cursor-pointer">
+            <a (click)="downloadImage(isLandscape ? item.src.original : item.src.portrait)" class="flex-item download-icon cursor-pointer">
                 <svg width="48px" height="48px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- Shadow for Arrow -->
                     <path

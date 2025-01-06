@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
@@ -11,6 +11,21 @@ import { LoaderComponent } from '../loader/loader.component';
 export class ImageCardComponent {
   @Input()
   items:any = [];
+
+  isLandscape: boolean = true;
+
+  constructor() {
+    this.checkOrientation();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event:any) {
+    this.checkOrientation();
+  }
+
+  checkOrientation() {
+    this.isLandscape = window.innerWidth > window.innerHeight;
+  }
 
   isInfoVisible: boolean[] = [];
   isLoading:boolean=false;
